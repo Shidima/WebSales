@@ -1,43 +1,91 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<meta name="viewport" content="user-scalable=no, width=device-width" />
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="only screen and (max-width: 1024px)" />
-	<link rel="stylesheet" type="text/css"href="css/desktop.css" media="screen and (min-width: 1025px)" />
-	<!--[if IE]>
-	<link rel="stylesheet" type="text/css" href="desktop.css" media="all" />
-	<![endif]-->
-
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/mobile.js"></script>
-	
-	<title>Hotels van Oranje</title>
-</head>
-<body>
-	<div id="container">
-		<div id="header">
-			<h1><a href="./">Hotels van Oranje</a></h1>
-			<div id="nav">
-				<ul>
-				<li><a href="consulting-clinic.html">Zalen</a></li>
-				<li><a href="on-call.html">Outlets</a></li>
-				<li><a href="development.html">Beauty &amp; Wellness</a></li>
-				<li><a href="http://www.oreilly.com">Externe Locaties</a></li>
-				</ul>
-			</div>
-		</div>
-		<div id="content">
-			<h2>About</h2>
-			<p>Jonathan Stark is a web developer, speaker, and author. His
-			consulting firm, Jonathan Stark Consulting, Inc., has attracted
-			clients such as Staples, Turner Broadcasting, and the PGA Tour.
-			...
-			</p>
-		</div>
-		<div id="sidebar">
-			<p>Jonathan Stark is a mobile and web application developer who the
-			Wall Street Journal has called an expert on publishing desktop
-			data to the web.</p>
-		</div>
-	</div>
-</body>
+    <head>
+        <title>Kilo</title>
+        <link type="text/css" rel="stylesheet" media="screen" href="jqtouch/jqtouch.css" />
+        <link type="text/css" rel="stylesheet" media="screen" href="themes/apple/theme.css" />
+        <script type="text/javascript" src="jqtouch/jquery.js"></script>
+        <script type="text/javascript" src="jqtouch/jqtouch.js"></script>
+        <script type="text/javascript">
+            var jQT = $.jQTouch({ 
+                icon: 'kilo.png'
+            }); 
+        </script>
+    </head>
+    <body>
+        <div id="home">
+            <div class="toolbar">
+                <h1>Hotels van Oranje</h1>
+                <a class="button flip" href="#settings">Settings</a>
+            </div>
+            <ul class="edgetoedge">
+                <li class="arrow"><a href="#dates">Dates</a></li>
+                <li class="arrow"><a href="#about">About</a></li>
+            </ul>
+        </div>
+        <div id="about">
+            <div class="toolbar">
+                <h1>About</h1>
+                <a class="button back" href="#">Back</a>
+            </div>
+            <div>
+                <p>Kilo gives you easy access to your food diary.</p>
+            </div>
+        </div>
+        <div id="dates">
+            <div class="toolbar">
+                <h1>Dates</h1>
+                <a class="button back" href="#">Back</a>
+            </div>
+            <ul class="edgetoedge">
+                <li class="arrow"><a id="0" href="#date">Today</a></li>
+                <li class="arrow"><a id="1" href="#date">Yesterday</a></li>
+                <li class="arrow"><a id="2" href="#date">2 Days Ago</a></li>
+                <li class="arrow"><a id="3" href="#date">3 Days Ago</a></li>
+                <li class="arrow"><a id="4" href="#date">4 Days Ago</a></li>
+                <li class="arrow"><a id="5" href="#date">5 Days Ago</a></li>
+            </ul>
+        </div>
+        <div id="date">
+            <div class="toolbar">
+                <h1>Date</h1>
+                <a class="button back" href="#">Back</a>
+                <a class="button slideup" href="#createEntry">+</a>
+            </div>
+            <ul class="edgetoedge">
+                <li id="entryTemplate" class="entry" style="display:none">
+                    <span class="label">Label</span>
+                    <span class="calories">000</span>
+                    <span class="delete">Delete</span>
+                </li>
+            </ul>
+        </div>
+        <div id="createEntry">
+            <div class="toolbar">
+                <h1>New Entry</h1>
+                <a class="button cancel" href="#">Cancel</a>
+            </div>
+            <form method="post">
+                <ul class="rounded">
+                    <li><input type="text" placeholder="Food" name="food" id="food" autocapitalize="off" autocorrect="off" autocomplete="off" /></li>
+                    <li><input type="text" placeholder="Calories" name="calories" id="calories" autocapitalize="off" autocorrect="off" autocomplete="off" /></li>
+                    <li><input type="submit" class="submit" name="action" value="Save Entry" /></li>
+                </ul>
+            </form>
+        </div>
+        <div id="settings">
+            <div class="toolbar">
+                <h1>Settings</h1>
+                <a class="button cancel" href="#">Cancel</a>
+            </div>
+            <form method="post">
+                <ul class="rounded">
+                    <li><input placeholder="Age" type="text" name="age" id="age" /></li>
+                    <li><input placeholder="Weight" type="text" name="weight" id="weight" /></li>
+                    <li><input placeholder="Budget" type="text" name="budget" id="budget" /></li>
+                    <li><input type="submit" class="submit" name="action" value="Save Changes" /></li>
+                </ul>
+            </form>
+        </div>
+    </body>
 </html>
