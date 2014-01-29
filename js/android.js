@@ -12,7 +12,7 @@ function loadPage(url) {
         var element = ' #content';
     }
     $('#container').load(url + element, function(){
-        var title = $('h2').html() || 'Hello!'; 
+        var title = $('h2').html() || 'HvO'; 
         $('h1').html(title); 
         $('h2').remove(); 
         $('.leftButton').remove(); 
@@ -27,10 +27,12 @@ function loadPage(url) {
             });
         } 
         $('#container a').click(function(e){
-            var url = e.target.href; 
-            if (url.match(window.location.hostname)) {
-                e.preventDefault(); 
-                loadPage(url);
+            var url = e.target.href;
+            if (!url.search("gallerys")) {
+                if (url.match(window.location.hostname)) {
+                    e.preventDefault(); 
+                    loadPage(url);
+                }
             }
         });
         $('#progress').remove();
